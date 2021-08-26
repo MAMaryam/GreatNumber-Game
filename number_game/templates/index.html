@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        #all {
+            width: 1000px;
+            height: 600px;
+            border: 2px solid black;
+            padding: 15px;
+            margin: 25px;
+            background-color: aquamarine;
+        } 
+            
+        
+        
+
+        #text {
+            text-align: center;
+        }
+
+        #ele {
+            text-align: center;
+        }
+
+        #res {
+            font-size: xx-large;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id='all'>
+        <div id='text'>
+            <h1>Welcome to the Great Number Game!</h1><br>
+            <h3>I am thinking of a number between 1 and 100</h3><br>
+            <h3>Take a guess!</h3>
+        </div>
+        <div id='ele'>
+            <form method="post" , action="inputCalculation">
+                {% csrf_token %}
+                <input type="text" name="number" placeholder="enter a number" /><br><br>
+                <input type="submit" value="Submit">
+            </form><br>
+        </div>
+        <div id='res'>{{input}}</div>
+    </div>
+</body>
+
+</html>
